@@ -5,13 +5,13 @@
 /// [Author] Chris Kneller
 /// [Date] March 5, 2024
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cleanproject/src/features/error/presentation/widgets/error_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../config/locator.dart';
-import '../../../../core/utility/submission_status.dart';
 import '../../../../core/shared/widgets/custom_button.dart';
 import '../../../auth/presentation/screens/login_screen.dart';
 import '../bloc/home_bloc.dart';
@@ -62,7 +62,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     // User image
                     ClipOval(
-                      child: Image.network(
+                      child: CachedNetworkImage(
+                        imageUrl: 
                         state.user.photoUrl.urlString,
                         width: 100,
                         height: 100,
