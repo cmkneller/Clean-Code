@@ -6,6 +6,7 @@
 /// [Author] Chris Kneller
 
 /// [Date] March 5, 2024
+library;
 
 import '../entities/email.dart';
 import '../entities/user.dart';
