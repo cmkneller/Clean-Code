@@ -45,5 +45,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   /// Logs the user out
   Future<void> logoutUser(
-      LogoutHomeEvent event, Emitter<HomeState> emit) async {}
+      LogoutHomeEvent event, Emitter<HomeState> emit) async {
+        Either<Failure, void> execution =
+          await logOutUserUsecase.execute(EmptyParams());
+        execution.fold((l) {
+          emit(state.copyWith(status: AsyncStatus.error));
+        }, (r) {
+          // Do Nothing
+        });
+      }
 }

@@ -28,6 +28,7 @@ class LogOutUserUsecase extends Usecase<EmptyParams, void> {
       return const Right(null);
     } on Exception catch (e) {
       Failure failure = Failure(severity: Severity.low, message: e.message);
+      errorRepository.pushError(failure);
       return Left(failure);
     }
   }
