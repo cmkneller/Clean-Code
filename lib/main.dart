@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Clean Login App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromRGBO(227, 0, 140, 1)),
         useMaterial3: true,
       ),
       routerConfig: AppRouter().router,

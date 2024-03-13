@@ -6,22 +6,22 @@
 /// [Author] Chris Kneller
 /// [Date] March 5, 2024
 
+import 'package:cleanproject/src/features/scanner/presentation/screens/scanner_screen.dart';
 import 'package:go_router/go_router.dart';
 
-import '../features/auth/presentation/screens/login_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
 
 class AppRouter {
   late final GoRouter router = GoRouter(routes: [
     GoRoute(
-      path: LoginScreen.routeName,
-      name: LoginScreen.routeName,
-      builder: (context, state) => const LoginScreen(),
-    ),
-    GoRoute(
       path: HomeScreen.routeName,
       name: HomeScreen.routeName,
       builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: ScannerScreen.routeName,
+      name: ScannerScreen.routeName,
+      builder: (context, state) => const ScannerScreen(),
     ),
   ]);
 }

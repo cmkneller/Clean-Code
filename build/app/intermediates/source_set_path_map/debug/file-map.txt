@@ -1,0 +1,23 @@
+com.exmple.cleanproject.app-jetified-window-1.0.0-beta04-0 /Users/christopherkneller/.gradle/caches/transforms-3/076eb9235982ee06112d76594ea8585f/transformed/jetified-window-1.0.0-beta04/res
+com.exmple.cleanproject.app-jetified-camera-camera2-1.3.1-1 /Users/christopherkneller/.gradle/caches/transforms-3/400e0d603d183a9ddf660e07cdc77f4e/transformed/jetified-camera-camera2-1.3.1/res
+com.exmple.cleanproject.app-jetified-play-services-basement-18.1.0-2 /Users/christopherkneller/.gradle/caches/transforms-3/55b4e390742817dc4b9653e42d791034/transformed/jetified-play-services-basement-18.1.0/res
+com.exmple.cleanproject.app-jetified-annotation-experimental-1.3.0-3 /Users/christopherkneller/.gradle/caches/transforms-3/761929e091d544d9e6394773eda8bdee/transformed/jetified-annotation-experimental-1.3.0/res
+com.exmple.cleanproject.app-core-1.10.1-4 /Users/christopherkneller/.gradle/caches/transforms-3/889ce5bd12f1117e5357d5fcdb5e1305/transformed/core-1.10.1/res
+com.exmple.cleanproject.app-jetified-window-java-1.0.0-beta04-5 /Users/christopherkneller/.gradle/caches/transforms-3/99750bb863b6fe460a7b5da8686e778d/transformed/jetified-window-java-1.0.0-beta04/res
+com.exmple.cleanproject.app-jetified-camera-lifecycle-1.3.1-6 /Users/christopherkneller/.gradle/caches/transforms-3/b4b618a5b3e82ac7a61f0b2674326f1c/transformed/jetified-camera-lifecycle-1.3.1/res
+com.exmple.cleanproject.app-jetified-camera-core-1.3.1-7 /Users/christopherkneller/.gradle/caches/transforms-3/ceb52907d68c0ebd6041f52697092cf0/transformed/jetified-camera-core-1.3.1/res
+com.exmple.cleanproject.app-browser-1.5.0-8 /Users/christopherkneller/.gradle/caches/transforms-3/d9d38ec9344928c1b01c151ec647a95a/transformed/browser-1.5.0/res
+com.exmple.cleanproject.app-lifecycle-runtime-2.3.1-9 /Users/christopherkneller/.gradle/caches/transforms-3/db4b39695b36fb6bc4e9dc229c8d81d0/transformed/lifecycle-runtime-2.3.1/res
+com.exmple.cleanproject.app-jetified-play-services-base-18.1.0-10 /Users/christopherkneller/.gradle/caches/transforms-3/e0a8793a7a85d6e071b7a743c9adf075/transformed/jetified-play-services-base-18.1.0/res
+com.exmple.cleanproject.app-debug-11 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/android/app/src/debug/res
+com.exmple.cleanproject.app-main-12 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/android/app/src/main/res
+com.exmple.cleanproject.app-pngs-13 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/app/generated/res/pngs/debug
+com.exmple.cleanproject.app-resValues-14 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/app/generated/res/resValues/debug
+com.exmple.cleanproject.app-rs-15 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/app/generated/res/rs/debug
+com.exmple.cleanproject.app-mergeDebugResources-16 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.exmple.cleanproject.app-mergeDebugResources-17 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.exmple.cleanproject.app-merged_res-18 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/app/intermediates/merged_res/debug
+com.exmple.cleanproject.app-packaged_res-19 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/mobile_scanner/intermediates/packaged_res/debug
+com.exmple.cleanproject.app-packaged_res-20 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/path_provider_android/intermediates/packaged_res/debug
+com.exmple.cleanproject.app-packaged_res-21 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/sqflite/intermediates/packaged_res/debug
+com.exmple.cleanproject.app-packaged_res-22 /Users/christopherkneller/Documents/Computer Science Degree/Lecture/cleanproject/Clean-Code/build/url_launcher_android/intermediates/packaged_res/debug

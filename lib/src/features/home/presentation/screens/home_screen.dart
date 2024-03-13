@@ -5,15 +5,17 @@
 /// [Author] Chris Kneller
 /// [Date] March 5, 2024
 
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cleanproject/src/features/error/presentation/widgets/error_wrapper.dart';
+import 'package:cleanproject/src/features/scanner/presentation/screens/scanner_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../config/path_constants.dart';
+import '../../../error/presentation/widgets/error_wrapper.dart';
+import '../widgets/article_widget.dart';
+import '../widgets/featured_article_widget.dart';
+
 import '../../../../config/locator.dart';
-import '../../../../core/shared/widgets/custom_button.dart';
-import '../../../auth/presentation/screens/login_screen.dart';
 import '../bloc/home_bloc.dart';
 import '../bloc/home_events.dart';
 import '../bloc/home_state.dart';
@@ -22,7 +24,7 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
   });
-  static const routeName = "/home";
+  static const routeName = "/";
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -37,18 +39,36 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-// Logs user out and navigates back to the login screen
-  void handleLogOut() {
-    bloc.add(LogoutHomeEvent());
-    context.pushReplacementNamed(LoginScreen.routeName);
-  }
-
   @override
   Widget build(BuildContext context) {
     return ErrorWrapper(
       widget: Scaffold(
+          backgroundColor: Colors.white,
+          extendBodyBehindAppBar: true,
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: GestureDetector(
+            onTap: () {
+              context.pushNamed(ScannerScreen.routeName);
+            },
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Container(
+                  width: 80,
+                  height: 80,
+                  color: Theme.of(context).colorScheme.primary,
+                  child: Image.asset(
+                    AssetPathConstants.qrIconPath,
+                    width: 40,
+                  ),
+                )),
+          ),
           appBar: AppBar(
-            title: const Text("Home Screen"),
+            leadingWidth: 150,
+            backgroundColor: Colors.transparent,
+            leading: Image.asset(
+              AssetPathConstants.logoPath,
+            ),
           ),
           body: BlocConsumer<HomeBloc, HomeState>(
             bloc: bloc,
@@ -56,60 +76,47 @@ class _HomeScreenState extends State<HomeScreen> {
               // Place any logic you want to be triggered by a state change
             },
             builder: (context, state) {
-              return Padding(
-                padding: const EdgeInsets.all(50),
-                child: Column(
-                  children: [
-                    // User image
-                    ClipOval(
-                      child: CachedNetworkImage(
-                        imageUrl: 
-                        state.user.photoUrl.urlString,
-                        width: 100,
-                        height: 100,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+              Size screenDimensions = MediaQuery.of(context).size;
 
-                    // Spacing
-                    const SizedBox(
-                      height: 50,
-                    ),
+              return Column(
+                children: [
+                  // Featured Article
+                  FeaturedArticleWidget(
+                    screenDimensions: screenDimensions,
+                    articleUrl: state.featuredArticle.articleUrl,
+                    title: state.featuredArticle.title,
+                    description: state.featuredArticle.description,
+                    thumbnailUrl: state.featuredArticle.thumbnailUrl,
+                  ),
 
-                    // User name
-                    Text(
-                      state.user.name,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                  Container(
+                    padding: const EdgeInsets.all(32),
+                    width: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Whats On:",
+                            style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24)),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              ...state.articleList.map((article) =>
+                                  ArticleWidget(
+                                      screenDimensions: screenDimensions,
+                                      thumbnailUrl: article.thumbnailUrl,
+                                      articleUrl: article.articleUrl,
+                                      title: article.title))
+                            ],
+                          ),
+                        )
+                      ],
                     ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-
-                    // User Bio
-                    Text(
-                      state.user.bio,
-                      style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-
-                    // Spacing
-                    const SizedBox(
-                      height: 25,
-                    ),
-
-                    // Log out button
-                    CustomButton(
-                      isGradient: true,
-                      function: handleLogOut,
-                      isDark: false,
-                      activated: true,
-                      child: const Text(
-                        "Log Out",
-                      ),
-                    ),
-                  ],
-                ),
+                  )
+                ],
               );
             },
           )),

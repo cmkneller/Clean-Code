@@ -25,12 +25,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final LogOutUserUsecase logOutUserUsecase = getIt.get<LogOutUserUsecase>();
 
   HomeBloc() : super(HomeState.initial()) {
-    on<InitHomeEvent>(loadUser);
-    on<LogoutHomeEvent>(logoutUser);
+    on<InitHomeEvent>(initHome);
   }
 
   /// Loads user into the home screen
-  Future<void> loadUser(InitHomeEvent event, Emitter<HomeState> emit) async {
+  Future<void> initHome(InitHomeEvent event, Emitter<HomeState> emit) async {
     Either<Failure, User> execution =
         await loadUserUsecase.execute(EmptyParams());
 
@@ -39,19 +38,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         status: AsyncStatus.error,
       ));
     }, (r) {
-      emit(state.copyWith(status: AsyncStatus.succesful, user: r));
+      emit(state.copyWith(
+        status: AsyncStatus.succesful,
+      ));
     });
   }
-
-  /// Logs the user out
-  Future<void> logoutUser(
-      LogoutHomeEvent event, Emitter<HomeState> emit) async {
-        Either<Failure, void> execution =
-          await logOutUserUsecase.execute(EmptyParams());
-        execution.fold((l) {
-          emit(state.copyWith(status: AsyncStatus.error));
-        }, (r) {
-          // Do Nothing
-        });
-      }
 }

@@ -1,0 +1,1 @@
+ /Users/christopherkneller/Documents/Computer\ Science\ Degree/Lecture/cleanproject/Clean-Code/.dart_tool/flutter_build/2f9556a1b8db6b1bef50af56c27ab558/native_assets.yaml: 

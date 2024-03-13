@@ -47,7 +47,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
 
-    double padding = deviceSize.height * 0.025;
+    double padding = 10;
 
     // Ensure that the button takes the full width of its parent.
     return ConstrainedBox(
@@ -58,7 +58,7 @@ class CustomButton extends StatelessWidget {
         child: Container(
           // Decorate the button with a gradient and rounded corners.
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(32),
               gradient: isGradient
                   ? LinearGradient(
                       colors: [
